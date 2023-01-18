@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int i, tabu[10];
+
+
+    printf("Digite um número: ");
+    scanf("%d", &tabu[10]);
+
+    for(i=1; i<=10; ++i){ 
+    printf("%d x %d = %d\n", tabu[10], i, i * tabu[10]);
+    }
+    }

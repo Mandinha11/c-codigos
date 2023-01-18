@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	loat N[20], temp;
+int i,j =19;
+
+   for (i = 0;i <20; i++){
+       scanf("%f",&N[i]);
+   }
+
+   for (i =0; i <10; i++){
+       temp = N[i];
+       N[i] = N[j];
+       N[j] = temp;
+       j--;
+   }
+
+   for (i = 0; i <20; i++){
+       printf ("N[%d] = %.0f\n",i, N[i]);
+   }
+    return 0;
+}

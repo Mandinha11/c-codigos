@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int A[10];
+int B[10];
+int C[1];
+int i;
+
+ for (i=0; i<10; i++){
+
+     printf("numero [%d]=",i);
+     scanf("%d",&A[i]);
+ } 
+ for (i=0; i<10; i++){
+
+     printf("numero [%d]=",i);
+     scanf("%d",&B[i]);
+     C = A+B;
+     printf(" a soma dos dois vetores é[%d]",C);
+}
+
+
+    return 0;

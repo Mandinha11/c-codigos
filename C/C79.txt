@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int i;
+    char v[5]={'a','e','i','o','u'};
+    for(i=0;i<5;i++){
+        if(i<4){
+        printf("%c,",v[i]);
+    }else{
+        printf("%c",v[i]);
+        }
+    }
+}

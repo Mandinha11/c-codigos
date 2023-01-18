@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	float elementos [200];
+   int i;
+   for (i=0;i<200;i++){
+       printf("elementos[%d]=",i);
+       scanf("%f",&elementos[i]);
+
+   }
+   for(i=0;i<200;i++){
+       printf("elementos [%d]=%f\n",i,elementos[i]);
+   }
+
+
+    return 0;
+}

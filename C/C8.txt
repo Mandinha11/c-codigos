@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int i;
+    double n[100],x;
+    scanf("%lf",&x);
+
+    n[i]=x;
+
+    for(i=0;i<100;i++)
+    {
+       printf("N[%d] = %.4lf\n",i,n[i]);
+       x/=2;
+       n[i+1]=x;
+    }
+    return 0;
+}

@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	 int n[12],i,X,Y;
+
+    for(i=0;i<12;i++){
+        printf("VETOR[%d]: ",i);
+        scanf("%d", &n[i]);
+    }
+    printf("Digite uma posição X e uma Y do vetor para efetuar soma: \n");
+    printf("X: ");
+    scanf("%d",&X);
+    if(X<0  X>11){
+        printf("!!!ERRO!!!\n");
+        while(X<0  X>11){
+            printf("X: ");
+            scanf("%d",&X);
+        }
+    }
+    printf("Y: ");
+    scanf("%d",&Y);
+    if(Y<0  Y>11){
+        printf("!!!ERRO!!!\n");
+        while(Y<0  Y>11){
+            printf("Y: ");
+            scanf("%d",&Y);
+        }
+    }
+    printf("A soma entre %d e %d é %d",n[X],n[Y],n[X]+n[Y]);
+}
