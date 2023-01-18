@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int idade[], pessoas , maior, menor,i;
+    float media;
+    media = 0;
+    pessoas = 0;
+
+    printf ("Digite uma idade:");
+    scanf  ("%d", &idade[i]);
+
+
+    while (idade[i]>1){
+        pessoas = pessoas + 1;
+        media = idade + media;
+
+    printf ("Digite uma idade:");
+    scanf  ("%d", &idade[i]);
+
+     for(idade[i]=0;idade[i]>1;idade[i]++);
+         if (idade[i] < menor){
+         menor=idade[i];
+    }
+
+        if(idade[i] >maior){
+        maior=idade[i];
+    }
+
+    }
+
+    media = media / pessoas;
+    printf ("Numero de pessoas: %d\n", pessoas);
+    printf ("Media: %.2f\n", media);
+    printf ("A menor idade é: %d\n A maior idade é: %d", menor,maior);
+
+
+ 
+
+    return 0;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	
+
+if (primeiro>segundo){
+            menor = segundo;
+        }else if (segundo>primeiro){
+            menor = primeiro;
+        }

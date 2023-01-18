@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int cont=0+1,x;
+
+    scanf("%d",&x);
+
+    while(x!=0)
+    {
+        scanf("%d",&x);
+        if((x>=100) && (x<=200))
+        {
+           cont++; 
+        }
+    }
+    printf("%d",cont);
+}
+

@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int N, i;
+    printf("Digite N: ");
+    scanf("%d", &N);
+    float H = 0;
+
+    for (i = 1; i <=N; i++){
+      H = H + 1.0/i;
+    }
+
+     printf("%f \n", H);
+
+    return 0;
+}
+

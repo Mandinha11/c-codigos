@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	float altura [10];
+   int i;
+   for (i=0;i<10;i++){
+       printf("altura[%d]=",i);
+       scanf("%f",&altura[i]);
+
+   }
+   for(i=0;i<10;i++){
+       printf("altura %d=%f\n",i,altura[i]);
+   }
+
+
+    return 0;
+}

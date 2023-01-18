@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	//Preenchimento de Vetor IV
+
+
+void imprimeFinal(int contador, int vetor[], int flag) {
+    int i=0;
+    while (i<contador) {
+        if (flag==1) printf("impar[%i] = %i\n", i, vetor[i]);
+        else printf("par[%i] = %i\n", i, vetor[i]);
+        i++;
+    }
+}
+int main() {
+    int valor, impar[5], par[5], ci=0, cp=0, i=0, j;
+    while (i++<15) {
+        scanf("%i", &valor);
+        if (valor%2==1 || valor%2==-1) impar[ci++] = valor;
+        else par[cp++] = valor;
+        if (cp==5) {
+            imprimeFinal(cp, par, 0);
+            cp=0;
+        }
+        if (ci==5) {
+            imprimeFinal(ci, impar, 1);
+            ci=0;
+        }
+    }
+    imprimeFinal(ci, impar, 1);
+    imprimeFinal(cp, par, 0);
+    return 0;
+}

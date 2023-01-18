@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int prova1,prova2;
+ float media;
+
+ printf(" Digite a nota das duas provas");
+ scanf("%d %d",&prova1,&prova2);
+ media = (prova1 + prova2)/2.0;
+ if(media>=6){
+ printf("Aluno aprovado %f\n",media);
+ }
+
+ else{
+ printf("Aluno reprovado %f\n",media);
+ }
+ return 0;
+}

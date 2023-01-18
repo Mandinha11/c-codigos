@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int menor(int a, int b) {
+    if (a > b)
+        return 1;
+    if (b > a)
+        return -1;
+    return 0;
+}
+int main() {
+
+    int n, indice = 0, sinal, resposta = 1;
+    scanf("%i", &n);
+    int valores[n];
+
+    while (indice < n)
+        scanf("%i", &valores[indice++]);
+
+    indice = 0;
+
+    sinal = menor(valores[0], valores[1]);
+
+    if (sinal) {
+
+        while (indice < n-1) {
+
+            if (menor(valores[indice], valores[indice+1]) != sinal) {
+                resposta = 0;
+                break;
+            }
+
+            sinal *= -1;
+            indice++;
+        }
+        printf("%i\n", resposta);
+    }
+    else
+        printf("0\n");
+
+
+
+    return 0;
+}

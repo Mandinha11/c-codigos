@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	float valores [10],soma=0,media;
+   int i;
+   for (i=0;i<10;i++){
+       printf("valores[%d]=",i);
+       scanf("%f",&valores[i]);
+       soma=soma +valores[i];
+   }
+   media =soma/10 ;
+   printf ("Média= %f\n",media);
+
+    return 0;
+}
+}

@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int nota; 
+float prova[15];
+float prova1[15], 
+soma = 0,total =0;
+float media = 0;
+
+
+for (nota = 0; nota <3; nota++){
+    printf("prova[%d] || prova2[%d]",nota,nota);
+    scanf("%f %f", &prova[nota],&prova1[nota]);
+}
+  for (nota = 0; nota <3; nota++){
+    media =(prova[nota] + prova1[nota])/2;
+    if (media >=6){
+        total++
+    }
+  }
+
+    printf("  total de alunos que tiraram nota acima da media = %f\n",total);
+
+
+
+    return 0;
+}

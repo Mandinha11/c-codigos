@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int main (void)
+{
+   float popA = 50000000;
+   float popB = 100000000;
+   int anos = 0;
+
+
+  while (popA <= popB){
+     popA = popA + popA0.03;
+     popB = popB + popB0.02;
+     anos = anos + 1;
+  }
+
+  printf("anos = %d", anos);
+
+  return 0;
+}
+

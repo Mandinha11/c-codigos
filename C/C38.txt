@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+
+int main()
+
+{
+
+	int x[5];
+float notas[4];
+int leitura[4];
+float leitura2[4];
+float calc[2];
+int i;
+x[0]=10;
+x[1]=20;
+x[2]=30;
+x[3]=40;
+x[4]=50;
+
+notas[0]=2.4;
+notas[1]=7.5;
+notas[2]=8;
+notas[3]=10;
+
+for (i = 0;i <4; i++){
+    scanf("%d",&leitura[i]);
+}
+for (i = 0;i <4; i++){
+    scanf("%f",&leitura2[i]);
+}
+
+  calc[0] = leitura[0] + leitura[1] + leitura[2];
+  calc[1] = (leitura2[0] + leitura2[1] + leitura2[2] + leitura2[3])/4;
+
+  printf("calc[0] = %f\n",& calc[0]);
+  printf ("calc[1] = %f\n",& calc [1]);
+}
