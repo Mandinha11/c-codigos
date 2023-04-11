@@ -1,0 +1,110 @@
+package ex006;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class ex06 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textNome;
+	private JTextField textn1;
+	private JTextField textn2;
+	private JTextField textn3;
+	
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ex06 frame = new ex06();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ex06() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		textNome = new JTextField();
+		textNome.setBounds(52, 14, 86, 20);
+		contentPane.add(textNome);
+		textNome.setColumns(10);
+		
+		textn1 = new JTextField();
+		textn1.setBounds(254, 14, 86, 20);
+		contentPane.add(textn1);
+		textn1.setColumns(10);
+		
+		textn3 = new JTextField();
+		textn3.setColumns(10);
+		textn3.setBounds(254, 100, 86, 20);
+		contentPane.add(textn3);
+		
+		textn2 = new JTextField();
+		textn2.setColumns(10);
+		textn2.setBounds(254, 59, 86, 20);
+		contentPane.add(textn2);
+		
+		JLabel lblNome = new JLabel("Nome do aluno");
+		lblNome.setBounds(10, 14, 46, 14);
+		contentPane.add(lblNome);
+		
+		JLabel lblNota1 = new JLabel("Nota 1");
+		lblNota1.setBounds(212, 14, 46, 14);
+		contentPane.add(lblNota1);
+		
+		JLabel lblNota2 = new JLabel("Nota 2");
+		lblNota2.setBounds(212, 59, 46, 14);
+		contentPane.add(lblNota2);
+		
+		JLabel lblNota3 = new JLabel("Nota 3");
+		lblNota3.setBounds(212, 100, 46, 14);
+		contentPane.add(lblNota3);
+		
+		JButton btnNewButton = new JButton("CALCULAR");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nome = textNome.getText();
+				Double n1 = Double.valueOf(textn1.getText());
+				Double n2 = Double.valueOf(textn1.getText());
+				Double n3 = Double.valueOf(textn1.getText());
+				
+				Double mediaF = (n1+n2+n3)/3.0;
+				
+				if(mediaF<0 || mediaF>10) {
+					JOptionPane.showMessageDialog(btnNewButton, "Erro!\nDigite denovo");
+				}
+				if(mediaF>0 && mediaF<6) {
+					JOptionPane.showMessageDialog(btnNewButton, "Reprovou! Nome: "+nome+", Nota: "+mediaF);
+				}
+				if(mediaF>=6 && mediaF<=10) {
+					JOptionPane.showMessageDialog(btnNewButton, "Aprovado! Nome: "+nome+", Nota: "+mediaF);
+				}
+			}
+		});
+		btnNewButton.setBounds(251, 149, 89, 23);
+		contentPane.add(btnNewButton);
+	}
+
+}
