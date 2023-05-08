@@ -1,0 +1,19 @@
+		Fornecedor fornecedor = new Fornecedor();
+				FornecedorDAO fornecedorDao = FornecedorDAO.getinstancia();
+				fornecedor.setNomeEmpressa(txtNomeEmpresa.getText());
+				fornecedor.setCnpj(Long.valueOf(txtCNPJ.getText()));
+				fornecedor.setCpf(Long.valueOf(txtCPF.getText()));
+				fornecedor.setTelefone(Long.valueOf(txtTelefone.getText()));
+				
+				if(fornecedorDao.Inserir(fornecedor)==true) {
+					JOptionPane.showMessageDialog(btnCadastrar, "Boa");
+				}else {
+					JOptionPane.showMessageDialog(btnCadastrar, "Deu não");
+				}
+				 if (txtNomeEmpresa.getText().trim().length() == 0) {
+					 JOptionPane.showMessageDialog(btnCadastrar, "Campo de texto não cadastrado!!");
+					 return;
+			        }
+				
+				
+			}
