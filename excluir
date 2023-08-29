@@ -1,0 +1,18 @@
+//Amanda
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setForeground(new Color(255, 255, 255));
+		btnExcluir.setBackground(new Color(0, 0, 0));
+		btnExcluir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               
+            	int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) {
+                    // Remove a linha selecionada
+                    DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
+                    tableModel.removeRow(selectedRow);
+                    JOptionPane.showMessageDialog(null, "Linha excluída com sucesso!");
+                }
+            }
+        });
+		
