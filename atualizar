@@ -1,0 +1,153 @@
+
+        public void actionPerformed(ActionEvent e) {
+				
+            int posicao = listaPessoas.indexOf(pessoaSelecionada);
+           
+                String nomeEmpresa = (String) table.getValueAt(selectedRow, 0);
+                String cpf = (String) table.getValueAt(selectedRow, 1);
+                String dataNasc = (String) table.getValueAt(selectedRow, 2);
+                String telefone = (String) table.getValueAt(selectedRow, 3);
+
+                System.out.println("Valores da linha selecionada:");
+                System.out.println("Nome da Empresa: " + nomeEmpresa);
+                System.out.println("CPF: " + cpf);
+                System.out.println("Data de Nascimento: " + dataNasc);
+                System.out.println("Telefone: " + telefone);
+                
+                Cliente c = new Cliente();
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Nenhuma linha selecionada!");
+            }
+            contentPane.add(btnListar);
+            }
+        
+    });
+
+
+    -----------------------------------------------------------------------
+
+    JButton btnListar = new JButton("Atualizar");
+		btnListar.setBackground(new Color(0, 0, 0));
+		btnListar.setForeground(new Color(255, 255, 255));
+		btnListar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				int selectedRow = table.getSelectedRow();
+				if (selectedRow >= 0) {
+					
+					String nomeEmpresa = (String) table.getValueAt(selectedRow, 0);
+					String cpf = (String) table.getValueAt(selectedRow, 1);
+					String dataNasc = (String) table.getValueAt(selectedRow, 2);
+					String telefone = (String) table.getValueAt(selectedRow, 3);
+
+					
+					System.out.println("Nome da Empresa: " + nomeEmpresa);
+					System.out.println("CPF: " + cpf);
+					System.out.println("Data de Nascimento: " + dataNasc);
+					System.out.println("Telefone: " + telefone);
+					
+					Cliente c = new Cliente();
+					
+				} else {
+					JOptionPane.showMessageDialog(null, "Nenhuma linha selecionada!");
+				}
+				contentPane.add(btnListar);
+				}
+			
+		});
+
+        -------------------------------------------------------------------------
+
+        * Tabela
+        */
+       table = new JTable();
+       table.setBackground(new Color(255, 255, 255));
+       panel_3.setLayout(new BorderLayout());
+       panel_3.add(new JScrollPane(table), BorderLayout.NORTH);
+       int posicaoCliente = table.getSelectedRow();
+       
+       pessoaSelecionada = listaCliente.get(posicaoCliente);
+       
+       //textTelefone.setText(pessoaSelecionada.getTelefone());
+       textNomeCompleto.setText(pessoaSelecionada.getNomeCompleto());
+       
+       
+       modelo = new DefaultTableModel(new Object[][] {},
+               new String[] { "Nome Completo", "CPF", "Data Nasc", "Telefone" });
+
+       table.setModel(
+               new DefaultTableModel(new Object[][] {}, new String[] { "Nome", "CPf", "Data Nac", "Telefone" }));
+
+       atualizarTabela();
+
+       JButton btnListar = new JButton("Atualizar");
+       btnListar.setBackground(new Color(0, 0, 0));
+       btnListar.setForeground(new Color(255, 255, 255));
+       btnListar.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent e) {
+               
+               int posicao = listaCliente.indexOf(pessoaSelecionada);
+               
+               String novoTelefone = textTelefone.getText();
+               String novoNome = textNomeCompleto.getText();
+               
+               pessoaSelecionada.setNomeCompleto(novoNome);
+               
+               
+               listaCliente.set(posicao, pessoaSelecionada);
+               atualizarTabela();
+               limparCampos();
+               
+               contentPane.add(btnListar);
+               }
+           
+       });
+
+       ===============================================================
+
+       table = new JTable();
+       table.setBackground(new Color(255, 255, 255));
+       panel_3.setLayout(new BorderLayout());
+       JScrollPane scrollPane = new JScrollPane(table);
+       scrollPane.addMouseListener(new MouseAdapter() {
+           @Override
+           public void mouseClicked(MouseEvent e) {
+               /*
+                * Selecionou uma linha da tabela
+                */
+               int selectedRow = table.getSelectedRow();
+
+               String cpf = (String) table.getValueAt(selectedRow, 1);
+
+               // fazer uma consulta no banco procurando um cliente por CPF ou no arraylist
+               
+//				clienteSelecionado = // cliente encontrado
+
+//				textNomeCompleto.setText(clienteSelecionado.getNome...);
+//				txtData.setText();
+//				textTelefone.setText();
+           }
+       });
+       panel_3.add(scrollPane, BorderLayout.NORTH);
+
+       modelo = new DefaultTableModel(new Object[][] {},
+               new String[] { "Nome Completo", "CPF", "Data Nasc", "Telefone" });
+
+       table.setModel(
+               new DefaultTableModel(new Object[][] {}, new String[] { "Nome", "CPf", "Data Nac", "Telefone" }));
+
+       atualizarTabela();
+
+       JButton btnAtualizar = new JButton("Atualizar");
+       btnAtualizar.setBackground(new Color(0, 0, 0));
+       btnAtualizar.setForeground(new Color(255, 255, 255));
+       btnAtualizar.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent e) {
+
+               // Pega os dados digitados nos campos
+               // Atualiza no usuario selecionado no banco
+
+               atualizarTabela();
+               contentPane.add(btnAtualizar);
+           }
